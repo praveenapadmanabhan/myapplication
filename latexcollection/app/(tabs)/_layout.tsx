@@ -4,6 +4,7 @@ import React from 'react';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -17,32 +18,15 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: '',
+          title: 'Updates',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? '' : ''} color={color} />
+            <MaterialCommunityIcons name="home-lightning-bolt-outline" size={24} color="black" />
           ),
         }}
       />
+
       <Tabs.Screen
-        name="LoginPage"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'log-in-outline'} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="Updates"
-        options={{
-          title: 'updates',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'notifications' : 'notifications-outline'} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="Profile"
+        name="profile"
         options={{
           title: 'Profile',
           tabBarIcon: ({ color, focused }) => (

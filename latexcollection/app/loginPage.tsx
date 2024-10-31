@@ -1,19 +1,16 @@
+import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
-import { loginUser } from './services/api';  // Import the loginUser function
+
 
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const router = useRouter();
 
   const handleLogin = async () => {
-    try {
-      const response = await loginUser(username, password);
-      setMessage(response.data.message);
-    } catch (error) {
-      setMessage('Login failed');
-    }
+    router.replace("/(tabs)/");
   };
 
   return (
